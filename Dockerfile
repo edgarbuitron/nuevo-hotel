@@ -1,10 +1,7 @@
 FROM php:8.1-apache
 
-# Copiar solo el contenido esencial
-COPY public/ /var/www/html/
-COPY includes/ /var/www/html/includes/
-COPY admin/ /var/www/html/admin/ 
-COPY imagenes/ /var/www/html/imagenes/
+# Copiar TODO el proyecto
+COPY . /var/www/html/
 
 # Configurar Apache para usar index.php
 RUN echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf
